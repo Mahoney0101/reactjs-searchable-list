@@ -1,0 +1,28 @@
+input[type=text]:focus {
+    border: 3px solid #555;
+  }
+
+.list-group-item{
+  position: relative;
+  display: block;
+  padding: 1%; /* adjust here */
+  margin-bottom: 3px;
+  border: 1px solid #ddd;
+  line-height: 1em /* set to text height */
+}
+.searchWidth{
+width:96%;
+padding: 1%;
+margin:1%;  
+}
+
+ul {
+  width:96%;
+  margin:.5%;
+  padding:.5%;
+}
+
+ul li {
+  border: 1px solid #ddd; /* Add a thin border to each list item */
+  background-color: #f6f6f6; /* Add a grey background color */
+}
