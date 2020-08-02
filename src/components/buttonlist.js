@@ -10,7 +10,8 @@ export class ButtonList extends Component {
 			listString: "",
 			searchText: "",
 			searchFilter: "",
-		    data: this.props.data
+			data: this.props.data,
+			noResult: "no Results..."
 		};
     }
     componentDidMount() {
@@ -52,12 +53,19 @@ export class ButtonList extends Component {
 			}
 
 			filtered = filtered.sort();
-
-			let mapped = filtered.map(name =>
+			let mapped = "";
+			if(filtered.length === 0){
+				mapped =
+					<li key="010" type="button" className="list-group-item list-group-item-action" /*onClick={() => AutoFill({ name })}*/ name="buttons">
+						noResult
+					</li>	
+			}
+			else{
+		        mapped = filtered.map(name =>
 				<li key={name[1]} type="button" className="list-group-item list-group-item-action" /*onClick={() => AutoFill({ name })}*/ name="buttons">
 					{name[0]}
 				</li>)
-
+			}
 			this.setState({ listString: mapped })
 
 		}
